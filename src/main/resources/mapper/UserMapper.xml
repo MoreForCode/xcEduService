@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.vue.demo.dao.UserDao">
+    <select id="findAll" resultType="user">
+        select * from user
+    </select>
+
+    <select id="findById" resultType="user" >
+        select * from user where id = #{id}
+    </select>
+
+    <update id="updateUser" parameterType="user">
+        update user set userName = #{user.userName},password=#{user.password},age=#{user.age},email=#{user.email},sex=#{user.sex}
+    </update>
+</mapper>
